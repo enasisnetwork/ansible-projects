@@ -1,0 +1,9 @@
+---
+
+
+
+collections:
+
+  - name: enasisnetwork.projects
+    src: collection
+    type: file

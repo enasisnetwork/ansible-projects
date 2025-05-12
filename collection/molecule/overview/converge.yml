@@ -1,0 +1,11 @@
+---
+
+
+
+- name: Import tasks and roles from playbook
+  import_playbook: enasisnetwork.projects.enhomie
+  tags: always
+
+- name: Import tasks and roles from playbook
+  import_playbook: enasisnetwork.projects.enrobie
+  tags: always
