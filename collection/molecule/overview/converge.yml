@@ -2,10 +2,36 @@
 
 
 
-- name: Import tasks and roles from playbook
-  import_playbook: enasisnetwork.projects.enhomie
-  tags: always
+- name: Include roles for playbook operations
+  hosts: all
+  tasks:
 
-- name: Import tasks and roles from playbook
-  import_playbook: enasisnetwork.projects.enrobie
-  tags: always
+    - name: Include downstream tasks within roles
+      ansible.builtin.include_role:
+        name: enasisnetwork.projects.enhomie
+        tasks_from: params
+
+    - name: Include downstream tasks within roles
+      ansible.builtin.include_role:
+        name: enasisnetwork.projects.enhomie
+        tasks_from: common
+
+    - name: Include downstream tasks within roles
+      ansible.builtin.include_role:
+        name: enasisnetwork.projects.enhomie
+        tasks_from: overview
+
+    - name: Include downstream tasks within roles
+      ansible.builtin.include_role:
+        name: enasisnetwork.projects.enrobie
+        tasks_from: params
+
+    - name: Include downstream tasks within roles
+      ansible.builtin.include_role:
+        name: enasisnetwork.projects.enrobie
+        tasks_from: common
+
+    - name: Include downstream tasks within roles
+      ansible.builtin.include_role:
+        name: enasisnetwork.projects.enrobie
+        tasks_from: overview
