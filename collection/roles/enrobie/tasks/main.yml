@@ -33,16 +33,19 @@
 
 
 
+- name: Include downstream tasks within roles
 
-
-
-- name: Declare relevant playbook variables
-
-  ansible.builtin.set_fact:
-    enrobie_service: >-
-      enrobie-service@{{ enrobie_unique }}
+  ansible.builtin.include_tasks: >-
+    common.yml
 
   tags: always
+
+
+
+
+
+
+# Remember basic molecule tests when updating
 
 
 
