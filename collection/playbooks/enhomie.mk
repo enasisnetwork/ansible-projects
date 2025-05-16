@@ -15,7 +15,10 @@ enhomie-overview: \
 	@#
 	@( \
 		set -e; \
-		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
 		. $(VENVP)/bin/activate; \
 		PYTHONPATH=. \
 		ansible-playbook \
@@ -37,7 +40,10 @@ enhomie-install: \
 	@#
 	@( \
 		set -e; \
-		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
 		PYTHONPATH=. \
@@ -60,7 +66,10 @@ enhomie-reinstall: \
 	@#
 	@( \
 		set -e; \
-		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
 		. $(VENVP)/bin/activate; \
 		orche_ensured="yes" \
 		orche_confirm="yes" \
@@ -85,7 +94,10 @@ enhomie-configure: \
 	@#
 	@( \
 		set -e; \
-		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
 		PYTHONPATH=. \
@@ -112,7 +124,10 @@ endif
 	@#
 	@( \
 		set -e; \
-		[ -f ./orchestro.env ] && set -a && . ./orchestro.env && set +a || true; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
 		. $(VENVP)/bin/activate; \
 		ansible_gather="yes" \
 		PYTHONPATH=. \
