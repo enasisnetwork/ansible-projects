@@ -42,7 +42,7 @@
     group: '{{ enrobie_group }}'
     mode: '0600'
 
-  become: true
+  become: '{{ enrobie_elevate }}'
 
   notify: restart enrobie
 

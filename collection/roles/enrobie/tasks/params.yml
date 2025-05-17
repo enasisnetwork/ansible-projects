@@ -40,6 +40,8 @@
       {{ enrobie_console | default(omit) }}
     enrobie_autostart: >-
       {{ enrobie_autostart | default(omit) }}
+    enrobie_elevate: >-
+      {{ enrobie_elevate | default(omit) }}
 
   tags: always
 
@@ -51,33 +53,7 @@
 - name: Validate role variables using Pydantic
 
   enasisnetwork.projects.enrobie.params:
-
-    unique: >-
-      {{ enrobie_unique | default(omit) }}
-    directory: >-
-      {{ enrobie_directory | default(omit) }}
-    user: >-
-      {{ enrobie_user | default(omit) }}
-    group: >-
-      {{ enrobie_group | default(omit) }}
-    python: >-
-      {{ enrobie_python | default(omit) }}
-    package: >-
-      {{ enrobie_package | default(omit) }}
-    version: >-
-      {{ enrobie_version | default(omit) }}
-    repo_path: >-
-      {{ enrobie_repo_path | default(omit) }}
-    repo_version: >-
-      {{ enrobie_repo_version | default(omit) }}
-    config: >-
-      {{ enrobie_config | default(omit) }}
-    logging: >-
-      {{ enrobie_logging | default(omit) }}
-    console: >-
-      {{ enrobie_console | default(omit) }}
-    autostart: >-
-      {{ enrobie_autostart | default(omit) }}
+    prefix: enrobie_
 
   register: pbvalidate
 
@@ -89,6 +65,7 @@
 
 
 - name: Declare relevant playbook variables
+  # Required to maintain child null values
 
   ansible.builtin.set_fact:
 
@@ -118,5 +95,7 @@
       {{ pbvalidate.params.console }}
     enrobie_autostart: >-
       {{ pbvalidate.params.autostart }}
+    enrobie_elevate: >-
+      {{ pbvalidate.params.elevate }}
 
   tags: always

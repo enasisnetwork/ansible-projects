@@ -42,7 +42,7 @@
     group: '{{ enhomie_group }}'
     mode: '0600'
 
-  become: true
+  become: '{{ enhomie_elevate }}'
 
   notify: restart enhomie
 

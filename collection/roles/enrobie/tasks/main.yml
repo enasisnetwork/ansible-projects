@@ -100,6 +100,8 @@
   ansible.builtin.include_tasks: >-
     systemd.yml
 
+  when: enrobie_elevate
+
   tags:
     - install
     - reinstall

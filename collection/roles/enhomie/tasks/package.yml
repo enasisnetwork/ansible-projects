@@ -15,7 +15,7 @@
     path: '{{ enhomie_directory }}/venv'
     state: absent
 
-  become: true
+  become: '{{ enhomie_elevate }}'
 
   tags: reinstall
 
@@ -35,7 +35,7 @@
     version: >-
       {{ enhomie_version | default(omit) }}
 
-  become: true
+  become: '{{ enhomie_elevate }}'
   become_user: '{{ enhomie_user }}'
 
   tags: always
