@@ -19,7 +19,7 @@
     group: root
     mode: '0644'
 
-  become: true
+  become: '{{ enrobie_elevate }}'
 
   tags: always
 
@@ -31,6 +31,6 @@
     name: '{{ enrobie_service }}'
     enabled: '{{ enrobie_autostart }}'
 
-  become: true
+  become: '{{ enrobie_elevate }}'
 
   tags: always

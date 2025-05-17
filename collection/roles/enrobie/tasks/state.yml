@@ -24,6 +24,6 @@
       stopped
       {%- endif -%}
 
-  become: true
+  become: '{{ enrobie_elevate }}'
 
   tags: always

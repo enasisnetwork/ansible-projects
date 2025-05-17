@@ -40,6 +40,8 @@
       {{ enhomie_console | default(omit) }}
     enhomie_autostart: >-
       {{ enhomie_autostart | default(omit) }}
+    enhomie_elevate: >-
+      {{ enhomie_elevate | default(omit) }}
 
   tags: always
 
@@ -51,33 +53,7 @@
 - name: Validate role variables using Pydantic
 
   enasisnetwork.projects.enhomie.params:
-
-    unique: >-
-      {{ enhomie_unique | default(omit) }}
-    directory: >-
-      {{ enhomie_directory | default(omit) }}
-    user: >-
-      {{ enhomie_user | default(omit) }}
-    group: >-
-      {{ enhomie_group | default(omit) }}
-    python: >-
-      {{ enhomie_python | default(omit) }}
-    package: >-
-      {{ enhomie_package | default(omit) }}
-    version: >-
-      {{ enhomie_version | default(omit) }}
-    repo_path: >-
-      {{ enhomie_repo_path | default(omit) }}
-    repo_version: >-
-      {{ enhomie_repo_version | default(omit) }}
-    config: >-
-      {{ enhomie_config | default(omit) }}
-    logging: >-
-      {{ enhomie_logging | default(omit) }}
-    console: >-
-      {{ enhomie_console | default(omit) }}
-    autostart: >-
-      {{ enhomie_autostart | default(omit) }}
+    prefix: enhomie_
 
   register: pbvalidate
 
@@ -89,6 +65,7 @@
 
 
 - name: Declare relevant playbook variables
+  # Required to maintain child null values
 
   ansible.builtin.set_fact:
 
@@ -118,5 +95,7 @@
       {{ pbvalidate.params.console }}
     enhomie_autostart: >-
       {{ pbvalidate.params.autostart }}
+    enhomie_elevate: >-
+      {{ pbvalidate.params.elevant }}
 
   tags: always

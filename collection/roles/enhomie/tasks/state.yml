@@ -24,6 +24,6 @@
       stopped
       {%- endif -%}
 
-  become: true
+  become: '{{ enhomie_elevate }}'
 
   tags: always

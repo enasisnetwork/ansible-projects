@@ -24,7 +24,7 @@ from pydantic import Field
 
 
 
-class RoleParams(BaseModel, extra='ignore'):
+class RoleParams(BaseModel, extra='forbid'):
     """
     Process and validate the Orche configuration parameters.
     """
@@ -90,19 +90,24 @@ class RoleParams(BaseModel, extra='ignore'):
               min_length=1)]
 
     logging: Annotated[
-        Optional[bool],
+        bool,
         Field(False,
               description='Enable logging to the log file')]
 
     console: Annotated[
-        Optional[bool],
+        bool,
         Field(False,
               description='Enable logging to the console')]
 
     autostart: Annotated[
-        Optional[bool],
+        bool,
         Field(False,
               description='Automatic startup with system')]
+
+    elevate: Annotated[
+        bool,
+        Field(False,
+              description='Whether to elevate privileges')]
 
 
 
@@ -130,7 +135,18 @@ class ActionModule(ActionBase):  # type: ignore
             'params': None,
             'changed': False}
 
-        source = self._task.args
+        args = self._task.args
+
+        assert task_vars is not None
+
+        prefix = args['prefix']
+        source = task_vars
+
+        source = {
+            k[len(prefix):]: v
+            for k, v in source.items()
+            if k.startswith(prefix)
+            and v not in [None, '']}
 
 
         try:

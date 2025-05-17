@@ -15,7 +15,7 @@
     path: '{{ enrobie_directory }}/venv'
     state: absent
 
-  become: true
+  become: '{{ enrobie_elevate }}'
 
   tags: reinstall
 
@@ -35,7 +35,7 @@
     version: >-
       {{ enrobie_version | default(omit) }}
 
-  become: true
+  become: '{{ enrobie_elevate }}'
   become_user: '{{ enrobie_user }}'
 
   tags: always
@@ -63,7 +63,7 @@
   loop_control:
     label: '{{ item }}'
 
-  become: true
+  become: '{{ enrobie_elevate }}'
   become_user: '{{ enrobie_user }}'
 
   tags: always
