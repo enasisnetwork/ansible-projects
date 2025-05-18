@@ -12,7 +12,8 @@
 - name: Declare relevant playbook variables
 
   ansible.builtin.set_fact:
-    enhomie_service: >-
+
+    _enhomie_service: >-
       enhomie-service@{{ enhomie_unique }}
 
   tags: always

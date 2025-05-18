@@ -1,0 +1,18 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+enrobie_unique: default
+enrobie_directory: /opt/enrobie
+enrobie_user: enrobie
+enrobie_group: enrobie
+enrobie_python: python3
+enrobie_package: enrobie
+enrobie_logging: false
+enrobie_console: false
+enrobie_autostart: false
+enrobie_elevate: false

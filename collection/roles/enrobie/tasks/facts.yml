@@ -12,7 +12,8 @@
 - name: Declare relevant playbook variables
 
   ansible.builtin.set_fact:
-    enrobie_service: >-
+
+    _enrobie_service: >-
       enrobie-service@{{ enrobie_unique }}
 
   tags: always

@@ -12,7 +12,7 @@
 - name: restart enrobie
 
   ansible.builtin.systemd:
-    name: '{{ enrobie_service }}'
+    name: '{{ _enrobie_service }}'
     state: restarted
 
   become: true

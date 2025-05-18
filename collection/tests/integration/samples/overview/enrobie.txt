@@ -1,0 +1,18 @@
+────────────────────────────────────────────────────────────
+enasprj1
+  enrobie_unique: 'default'
+  enrobie_directory: '/opt/enrobie'
+  enrobie_user: 'enrobie'
+  enrobie_group: 'enrobie'
+  enrobie_python: 'python3'
+  enrobie_package: 'enrobie'
+  enrobie_logging: False
+  enrobie_console: False
+  enrobie_autostart: False
+  enrobie_elevate: False
+  enrobie_version: ''
+  enrobie_repo_path: ''
+  enrobie_repo_version: ''
+  enrobie_config: ''
+  _enrobie_service: 'enrobie-service@default'
+────────────────────────────────────────────────────────────

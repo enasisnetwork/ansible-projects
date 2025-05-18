@@ -28,7 +28,7 @@
 - name: Enable the configured systemd service
 
   ansible.builtin.systemd:
-    name: '{{ enrobie_service }}'
+    name: '{{ _enrobie_service }}'
     enabled: '{{ enrobie_autostart }}'
 
   become: '{{ enrobie_elevate }}'

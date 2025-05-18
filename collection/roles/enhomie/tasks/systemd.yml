@@ -28,7 +28,7 @@
 - name: Enable the configured systemd service
 
   ansible.builtin.systemd:
-    name: '{{ enhomie_service }}'
+    name: '{{ _enhomie_service }}'
     enabled: '{{ enhomie_autostart }}'
 
   become: '{{ enhomie_elevate }}'

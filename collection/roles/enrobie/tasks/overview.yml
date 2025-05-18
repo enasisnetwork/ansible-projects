@@ -12,14 +12,6 @@
 - name: Information about the inventory hosts
 
   enasisnetwork.utility.overview:
-    input: >-
-      {%- set values = {} -%}
-      {%- for key, value in vars.items() -%}
-      {%-   if key.startswith('enrobie_')
-             or key.startswith('_enrobie_') -%}
-      {%-     do values.update({key: value}) -%}
-      {%-   endif -%}
-      {%- endfor -%}
-      {{- values | enasisnetwork.utility.sort_dict -}}
+    prefix: ['enrobie_', '_enrobie_']
 
   tags: always
