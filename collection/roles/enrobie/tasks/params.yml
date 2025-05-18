@@ -10,7 +10,8 @@
 
 
 - name: Declare relevant playbook variables
-  # Important to force parsing with Jinja2
+  # Important force parsing with Jinja2
+  # NOTE Remember to update the README file
 
   ansible.builtin.set_fact:
 
@@ -65,7 +66,7 @@
 
 
 - name: Declare relevant playbook variables
-  # Required to maintain child null values
+  # Required to retain child null value
 
   ansible.builtin.set_fact:
 
