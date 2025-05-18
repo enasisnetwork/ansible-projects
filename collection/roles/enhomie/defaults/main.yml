@@ -1,0 +1,18 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+enhomie_unique: default
+enhomie_directory: /opt/enhomie
+enhomie_user: enhomie
+enhomie_group: enhomie
+enhomie_python: python3
+enhomie_package: enhomie
+enhomie_logging: false
+enhomie_console: false
+enhomie_autostart: false
+enhomie_elevate: false

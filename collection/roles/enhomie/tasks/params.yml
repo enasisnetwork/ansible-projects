@@ -96,6 +96,6 @@
     enhomie_autostart: >-
       {{ pbvalidate.params.autostart }}
     enhomie_elevate: >-
-      {{ pbvalidate.params.elevant }}
+      {{ pbvalidate.params.elevate }}
 
   tags: always

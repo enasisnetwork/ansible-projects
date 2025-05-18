@@ -12,7 +12,7 @@
 - name: Control the state of package service
 
   ansible.builtin.systemd:
-    name: '{{ enhomie_service }}'
+    name: '{{ _enhomie_service }}'
     state: >-
       {%- set tags = ansible_run_tags -%}
       {%- if 'state-restarted' in tags -%}

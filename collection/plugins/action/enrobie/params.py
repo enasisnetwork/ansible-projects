@@ -37,31 +37,31 @@ class RoleParams(BaseModel, extra='forbid'):
 
     directory: Annotated[
         str,
-        Field('/opt/enrobie',
+        Field(...,
               description='Base directory for the package',
               min_length=1)]
 
     user: Annotated[
         str,
-        Field('enrobie',
+        Field(...,
               description='Local system user for deployment',
               min_length=1)]
 
     group: Annotated[
         str,
-        Field('enrobie',
+        Field(...,
               description='Local system group for deployment',
               min_length=1)]
 
     python: Annotated[
         str,
-        Field('python3',
+        Field(...,
               description='Python for creating virtual env',
               min_length=1)]
 
     package: Annotated[
         str,
-        Field('enrobie',
+        Field(...,
               description='Installation package or path',
               min_length=1)]
 
@@ -91,22 +91,22 @@ class RoleParams(BaseModel, extra='forbid'):
 
     logging: Annotated[
         bool,
-        Field(False,
+        Field(...,
               description='Enable logging to the log file')]
 
     console: Annotated[
         bool,
-        Field(False,
+        Field(...,
               description='Enable logging to the console')]
 
     autostart: Annotated[
         bool,
-        Field(False,
+        Field(...,
               description='Automatic startup with system')]
 
     elevate: Annotated[
         bool,
-        Field(False,
+        Field(...,
               description='Whether to elevate privileges')]
 
 
