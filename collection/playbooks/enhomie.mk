@@ -8,7 +8,7 @@
 .PHONY: enhomie-overview
 enhomie-overview: \
 	.check-stage .check-limit
-	@## Dump information related to operation
+	@## Information about the role operations
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enhomie-overview<c0>)
@@ -33,7 +33,7 @@ enhomie-overview: \
 .PHONY: enhomie-install
 enhomie-install: \
 	.check-stage .check-limit
-	@## Install and configure related package
+	@## Install the package in the virtual env
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enhomie-install<c0>)
@@ -59,7 +59,7 @@ enhomie-install: \
 .PHONY: enhomie-reinstall
 enhomie-reinstall: \
 	.check-stage .check-limit
-	@## Remove existing venv and then install
+	@## Install the package in the virtual env
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enhomie-reinstall<c0>)
@@ -87,7 +87,7 @@ enhomie-reinstall: \
 .PHONY: enhomie-configure
 enhomie-configure: \
 	.check-stage .check-limit
-	@## Bypass install and configure package
+	@## Template the service configuration file
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enhomie-configure<c0>)
