@@ -8,7 +8,7 @@
 .PHONY: enrobie-overview
 enrobie-overview: \
 	.check-stage .check-limit
-	@## Dump information related to operation
+	@## Information about the role operations
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-overview<c0>)
@@ -33,7 +33,7 @@ enrobie-overview: \
 .PHONY: enrobie-install
 enrobie-install: \
 	.check-stage .check-limit
-	@## Install and configure related package
+	@## Install the package in the virtual env
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-install<c0>)
@@ -59,7 +59,7 @@ enrobie-install: \
 .PHONY: enrobie-reinstall
 enrobie-reinstall: \
 	.check-stage .check-limit
-	@## Remove existing venv and then install
+	@## Install the package in the virtual env
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-reinstall<c0>)
@@ -87,7 +87,7 @@ enrobie-reinstall: \
 .PHONY: enrobie-configure
 enrobie-configure: \
 	.check-stage .check-limit
-	@## Bypass install and configure package
+	@## Template the service configuration file
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>enrobie-configure<c0>)
