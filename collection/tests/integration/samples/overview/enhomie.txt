@@ -10,9 +10,9 @@ enasprj1
   enhomie_console: False
   enhomie_autostart: False
   enhomie_elevate: False
-  enhomie_version: ''
-  enhomie_repo_path: ''
-  enhomie_repo_version: ''
-  enhomie_config: ''
+  enhomie_config: None
+  enhomie_repo_path: None
+  enhomie_repo_version: None
+  enhomie_version: None
   _enhomie_service: 'enhomie-service@default'
 ────────────────────────────────────────────────────────────

@@ -10,9 +10,9 @@ enasprj1
   enrobie_console: False
   enrobie_autostart: False
   enrobie_elevate: False
-  enrobie_version: ''
-  enrobie_repo_path: ''
-  enrobie_repo_version: ''
-  enrobie_config: ''
+  enrobie_config: None
+  enrobie_repo_path: None
+  enrobie_repo_version: None
+  enrobie_version: None
   _enrobie_service: 'enrobie-service@default'
 ────────────────────────────────────────────────────────────
