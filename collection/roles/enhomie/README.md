@@ -49,6 +49,7 @@ ansible-playbook \
 - `enhomie_logging` Enable logging to the log file
 - `enhomie_console` Enable logging to the console
 - `enhomie_autostart` Automatic startup with system
+- `enhomie_service` Name of the service to install
 - `enhomie_elevate` Whether to elevate privileges
 
 Check out the parameter model on

@@ -13,6 +13,7 @@ enasprj1
   enhomie_config: None
   enhomie_repo_path: None
   enhomie_repo_version: None
+  enhomie_service: None
   enhomie_version: None
-  _enhomie_service: 'enhomie-service@default'
+  _enhomie_service: '@default'
 ────────────────────────────────────────────────────────────

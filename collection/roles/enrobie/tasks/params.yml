@@ -41,6 +41,8 @@
       {{ enrobie_console | default(omit) }}
     enrobie_autostart: >-
       {{ enrobie_autostart | default(omit) }}
+    enrobie_service: >-
+      {{ enrobie_service | default(omit) }}
     enrobie_elevate: >-
       {{ enrobie_elevate | default(omit) }}
 
@@ -96,6 +98,8 @@
       {{ pbvalidate.params.console }}
     enrobie_autostart: >-
       {{ pbvalidate.params.autostart }}
+    enrobie_service: >-
+      {{ pbvalidate.params.service }}
     enrobie_elevate: >-
       {{ pbvalidate.params.elevate }}
 

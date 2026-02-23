@@ -20,7 +20,9 @@
     version: '{{ enhomie_repo_version }}'
     force: true
 
-  when: enhomie_repo_path
+  become: '{{ enhomie_elevate }}'
+
+  when: enhomie_repo_path | enasisnetwork.utility.present
 
   notify: restart enhomie
 

@@ -34,6 +34,10 @@
       {{ enhomie_python }} -m venv
     version: >-
       {{ enhomie_version | default(omit) }}
+    state: >-
+      {{ "latest"
+         if not enhomie_version | default
+         else omit }}
 
   become: '{{ enhomie_elevate }}'
   become_user: '{{ enhomie_user }}'

@@ -14,6 +14,6 @@
   ansible.builtin.set_fact:
 
     _enhomie_service: >-
-      enhomie-service@{{ enhomie_unique }}
+      {{ enhomie_service }}@{{ enhomie_unique }}
 
   tags: always

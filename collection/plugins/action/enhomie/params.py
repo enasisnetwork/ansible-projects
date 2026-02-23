@@ -105,6 +105,12 @@ class RoleParams(BaseModel, extra='forbid'):
         Field(...,
               description='Automatic startup with system')]
 
+    service: Annotated[
+        Optional[str],
+        Field(None,
+              description='Name of the service to install',
+              min_length=1)]
+
     elevate: Annotated[
         bool,
         Field(...,

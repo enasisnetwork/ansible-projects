@@ -49,6 +49,7 @@ ansible-playbook \
 - `enrobie_logging` Enable logging to the log file
 - `enrobie_console` Enable logging to the console
 - `enrobie_autostart` Automatic startup with system
+- `enrobie_service` Name of the service to install
 - `enrobie_elevate` Whether to elevate privileges
 
 Check out the parameter model on

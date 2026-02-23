@@ -34,6 +34,10 @@
       {{ enrobie_python }} -m venv
     version: >-
       {{ enrobie_version | default(omit) }}
+    state: >-
+      {{ "latest"
+         if not enrobie_version | default
+         else omit }}
 
   become: '{{ enrobie_elevate }}'
   become_user: '{{ enrobie_user }}'

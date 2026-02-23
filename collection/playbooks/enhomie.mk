@@ -5,6 +5,10 @@
 
 
 
+ENHOMIE_ANSIBLE_PLAYBOOK ?= enasisnetwork.projects.enhomie
+
+
+
 .PHONY: enhomie-overview
 enhomie-overview: \
 	.check-stage .check-limit
@@ -25,7 +29,7 @@ enhomie-overview: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=overview \
-			enasisnetwork.projects.enhomie; \
+			$(ENHOMIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -51,7 +55,7 @@ enhomie-install: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=install \
-			enasisnetwork.projects.enhomie; \
+			$(ENHOMIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -79,7 +83,7 @@ enhomie-reinstall: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=reinstall \
-			enasisnetwork.projects.enhomie; \
+			$(ENHOMIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -105,7 +109,7 @@ enhomie-configure: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=configure \
-			enasisnetwork.projects.enhomie; \
+			$(ENHOMIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -135,5 +139,5 @@ endif
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags="state-$(state)" \
-			enasisnetwork.projects.enhomie; \
+			$(ENHOMIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
