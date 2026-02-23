@@ -14,7 +14,7 @@
   ansible.builtin.template:
     src: systemd.j2
     dest: >-
-      /etc/systemd/system/enhomie-service@.service
+      /etc/systemd/system/{{ enhomie_service }}@.service
     owner: root
     group: root
     mode: '0644'
@@ -25,7 +25,7 @@
 
 
 
-- name: Enable the configured systemd service
+- name: Enable the configured system service
 
   ansible.builtin.systemd:
     name: '{{ _enhomie_service }}'

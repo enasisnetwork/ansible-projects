@@ -41,6 +41,8 @@
       {{ enhomie_console | default(omit) }}
     enhomie_autostart: >-
       {{ enhomie_autostart | default(omit) }}
+    enhomie_service: >-
+      {{ enhomie_service | default(omit) }}
     enhomie_elevate: >-
       {{ enhomie_elevate | default(omit) }}
 
@@ -96,6 +98,8 @@
       {{ pbvalidate.params.console }}
     enhomie_autostart: >-
       {{ pbvalidate.params.autostart }}
+    enhomie_service: >-
+      {{ pbvalidate.params.service }}
     enhomie_elevate: >-
       {{ pbvalidate.params.elevate }}
 

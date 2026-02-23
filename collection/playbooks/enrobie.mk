@@ -5,6 +5,10 @@
 
 
 
+ENROBIE_ANSIBLE_PLAYBOOK ?= enasisnetwork.projects.enrobie
+
+
+
 .PHONY: enrobie-overview
 enrobie-overview: \
 	.check-stage .check-limit
@@ -25,7 +29,7 @@ enrobie-overview: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=overview \
-			enasisnetwork.projects.enrobie; \
+			$(ENROBIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -51,7 +55,7 @@ enrobie-install: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=install \
-			enasisnetwork.projects.enrobie; \
+			$(ENROBIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -79,7 +83,7 @@ enrobie-reinstall: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=reinstall \
-			enasisnetwork.projects.enrobie; \
+			$(ENROBIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -105,7 +109,7 @@ enrobie-configure: \
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags=configure \
-			enasisnetwork.projects.enrobie; \
+			$(ENROBIE_ANSIBLE_PLAYBOOK); \
 		deactivate)
 
 
@@ -135,5 +139,5 @@ endif
 			$(ansible_args) \
 			--limit="$(limit)" \
 			--tags="state-$(state)" \
-			enasisnetwork.projects.enrobie; \
+			$(ENROBIE_ANSIBLE_PLAYBOOK); \
 		deactivate)

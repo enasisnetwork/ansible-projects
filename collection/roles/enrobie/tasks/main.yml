@@ -98,9 +98,11 @@
 - name: Include downstream tasks within roles
 
   ansible.builtin.include_tasks: >-
-    systemd.yml
+    service.yml
 
-  when: enrobie_elevate
+  when:
+    - enrobie_elevate
+    - enrobie_service | enasisnetwork.utility.present
 
   tags:
     - install
