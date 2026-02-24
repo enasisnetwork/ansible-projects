@@ -1,0 +1,41 @@
+>>> make pytest
+  ● Executing pytest in collection..
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0 -- /home/runner/work/ansible-projects/ansible-projects/main/.venv-package/bin/python3
+cachedir: .pytest_cache
+Using --randomly-seed=2352435311
+ansible: 2.20.3
+rootdir: /home/runner/work/ansible-projects/ansible-projects/main
+configfile: setup.cfg
+plugins: ansible-26.1.0, randomly-4.0.1, plus-0.8.1, sugar-1.1.1, cov-7.0.0, clarity-1.0.1, xdist-3.8.0, sphinx-0.7.1, mypy-1.0.1
+created: 4/4 workers
+4 workers [1 item]
+
+scheduling tests via LoadScheduling
+
+collection/tests/integration/test_default.py::test_default[collection-overview] 
+[gw0] [100%] PASSED collection/tests/integration/test_default.py::test_default[collection-overview] 
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                            Stmts   Miss  Cover
+-------------------------------------------------------------------
+collection/__init__.py                              0      0   100%
+collection/plugins/__init__.py                      0      0   100%
+collection/plugins/action/__init__.py               0      0   100%
+collection/plugins/action/enhomie/__init__.py       0      0   100%
+collection/plugins/action/enhomie/params.py        24      0   100%
+collection/plugins/action/enrobie/__init__.py       0      0   100%
+collection/plugins/action/enrobie/params.py        24      0   100%
+collection/tests/__init__.py                        0      0   100%
+collection/tests/integration/__init__.py            2      0   100%
+collection/tests/integration/test_default.py       17      0   100%
+-------------------------------------------------------------------
+TOTAL                                              67      0   100%
+============================== 1 passed in 45.67s ==============================
+    DONE
+  ● Write coveragepy output to htmlcov..
+    DONE
+  ● Write coveragepy output to coverage.json..
+    DONE
