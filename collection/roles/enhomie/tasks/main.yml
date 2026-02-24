@@ -68,6 +68,10 @@
   ansible.builtin.include_tasks: >-
     state.yml
 
+  when:
+    - enhomie_elevate
+    - enhomie_service | enasisnetwork.utility.present
+
   tags: reinstall
 
 
@@ -114,6 +118,10 @@
 
   ansible.builtin.include_tasks: >-
     state.yml
+
+  when:
+    - enhomie_elevate
+    - enhomie_service | enasisnetwork.utility.present
 
   tags:
     - state-restarted
