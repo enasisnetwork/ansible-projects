@@ -160,7 +160,7 @@ class ActionModule(ActionBase):  # type: ignore
 
             params = (
                 RoleParams(**source)
-                .endumped)
+                .model_dump())
 
             result['params'] = (
                 sort_dict(params))
