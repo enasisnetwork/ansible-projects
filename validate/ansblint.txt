@@ -1,3 +1,29 @@
 >>> make ansblint
   ● Executing ansible-lint on project..
-    DONE
+syntax-check[specific]: A playbook must be a list of plays, got a <class 'ansible.module_utils._internal._datatag._AnsibleTaggedDict'> instead: /home/runner/work/ansible-projects/ansible-projects/main/collection/molecule/overview/require.yml
+molecule/overview/require.yml:5:1
+
+syntax-check[specific]: The role 'enasisnetwork.projects.enhomie' was not found in: /home/runner/work/ansible-projects/ansible-projects/main/collection/playbooks/roles:/home/runner/work/ansible-projects/ansible-projects/main/collection/roles:/home/runner/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/home/runner/work/ansible-projects/ansible-projects/main/collection/playbooks
+playbooks/enhomie.yml:23:7
+
+syntax-check[specific]: The role 'enasisnetwork.projects.enrobie' was not found in: /home/runner/work/ansible-projects/ansible-projects/main/collection/playbooks/roles:/home/runner/work/ansible-projects/ansible-projects/main/collection/roles:/home/runner/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/home/runner/work/ansible-projects/ansible-projects/main/collection/playbooks
+playbooks/enrobie.yml:23:7
+
+fqcn[deep]: Deep plugins directory is discouraged. Move 'plugins/action/enhomie/__init__.py' directly under 'plugins/action' folder. (warning)
+plugins/action/enhomie/__init__.py:1
+
+fqcn[deep]: Deep plugins directory is discouraged. Move 'plugins/action/enhomie/params.py' directly under 'plugins/action' folder. (warning)
+plugins/action/enhomie/params.py:1
+
+fqcn[deep]: Deep plugins directory is discouraged. Move 'plugins/action/enrobie/__init__.py' directly under 'plugins/action' folder. (warning)
+plugins/action/enrobie/__init__.py:1
+
+fqcn[deep]: Deep plugins directory is discouraged. Move 'plugins/action/enrobie/params.py' directly under 'plugins/action' folder. (warning)
+plugins/action/enrobie/params.py:1
+
+var-naming[no-role-prefix]: Variables names from within roles should use enhomie_ as a prefix. (register: pbvalidate)
+roles/enhomie/tasks/params.yml:56:13 Task/Handler: Validate role variables using Pydantic
+
+var-naming[no-role-prefix]: Variables names from within roles should use enrobie_ as a prefix. (register: pbvalidate)
+roles/enrobie/tasks/params.yml:56:13 Task/Handler: Validate role variables using Pydantic
+
