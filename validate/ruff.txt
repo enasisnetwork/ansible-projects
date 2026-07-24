@@ -1,3 +1,382 @@
 >>> make ruff
   ● Executing ruff in collection..
-    DONE
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/plugins/action/enhomie/params.py:15:1
+   |
+15 | / from typing import Annotated
+16 | | from typing import Optional
+17 | |
+18 | | from ansible.plugins.action import ActionBase  # type: ignore
+19 | |
+20 | | from encommon.types import BaseModel
+21 | | from encommon.types import DictStrAny
+22 | | from encommon.types import sort_dict
+23 | |
+24 | | from pydantic import Field
+   | |__________________________^
+   |
+help: Organize imports
+   |
+14 |
+   - from typing import Annotated
+   - from typing import Optional
+15 + from typing import Annotated, Optional
+16 |
+17 | from ansible.plugins.action import ActionBase  # type: ignore
+   -
+   - from encommon.types import BaseModel
+   - from encommon.types import DictStrAny
+   - from encommon.types import sort_dict
+   -
+18 + from encommon.types import BaseModel, DictStrAny, sort_dict
+19 | from pydantic import Field
+   -
+20 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enhomie/params.py:70:9
+   |
+69 |     version: Annotated[
+70 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+71 |         Field(None,
+72 |               description='Which version instead of latest',
+   |
+help: Convert to `X | None`
+   |
+69 |     version: Annotated[
+   -         Optional[str],
+70 +         str | None,
+71 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enhomie/params.py:76:9
+   |
+75 |     repo_path: Annotated[
+76 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+77 |         Field(None,
+78 |               description='Clone configuration repository',
+   |
+help: Convert to `X | None`
+   |
+75 |     repo_path: Annotated[
+   -         Optional[str],
+76 +         str | None,
+77 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enhomie/params.py:82:9
+   |
+81 |     repo_version: Annotated[
+82 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+83 |         Field(None,
+84 |               description='Clone configuration repository',
+   |
+help: Convert to `X | None`
+   |
+81 |     repo_version: Annotated[
+   -         Optional[str],
+82 +         str | None,
+83 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enhomie/params.py:88:9
+   |
+87 |     config: Annotated[
+88 |         Optional[DictStrAny],
+   |         ^^^^^^^^^^^^^^^^^^^^
+89 |         Field(None,
+90 |               description='Clone configuration repository',
+   |
+help: Convert to `X | None`
+   |
+87 |     config: Annotated[
+   -         Optional[DictStrAny],
+88 +         DictStrAny | None,
+89 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> collection/plugins/action/enhomie/params.py:109:9
+    |
+108 |     service: Annotated[
+109 |         Optional[str],
+    |         ^^^^^^^^^^^^^
+110 |         Field(None,
+111 |               description='Name of the service to install',
+    |
+help: Convert to `X | None`
+    |
+108 |     service: Annotated[
+    -         Optional[str],
+109 +         str | None,
+110 |         Field(None,
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> collection/plugins/action/enhomie/params.py:130:14
+    |
+128 |         # NOCVR
+129 |         self,
+130 |         tmp: Optional[str] = None,
+    |              ^^^^^^^^^^^^^
+131 |         task_vars: Optional[DictStrAny] = None,
+132 |     ) -> DictStrAny:
+    |
+help: Convert to `X | None`
+    |
+129 |         self,
+    -         tmp: Optional[str] = None,
+130 +         tmp: str | None = None,
+131 |         task_vars: Optional[DictStrAny] = None,
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> collection/plugins/action/enhomie/params.py:131:20
+    |
+129 |         self,
+130 |         tmp: Optional[str] = None,
+131 |         task_vars: Optional[DictStrAny] = None,
+    |                    ^^^^^^^^^^^^^^^^^^^^
+132 |     ) -> DictStrAny:
+133 |         """
+    |
+help: Convert to `X | None`
+    |
+130 |         tmp: Optional[str] = None,
+    -         task_vars: Optional[DictStrAny] = None,
+131 +         task_vars: DictStrAny | None = None,
+132 |     ) -> DictStrAny:
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> collection/plugins/action/enhomie/params.py:169:16
+    |
+169 |         except Exception as reason:
+    |                ^^^^^^^^^
+170 |             result |= {
+171 |                 'failed': True,
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/plugins/action/enrobie/params.py:15:1
+   |
+15 | / from typing import Annotated
+16 | | from typing import Optional
+17 | |
+18 | | from ansible.plugins.action import ActionBase  # type: ignore
+19 | |
+20 | | from encommon.types import BaseModel
+21 | | from encommon.types import DictStrAny
+22 | | from encommon.types import sort_dict
+23 | |
+24 | | from pydantic import Field
+   | |__________________________^
+   |
+help: Organize imports
+   |
+14 |
+   - from typing import Annotated
+   - from typing import Optional
+15 + from typing import Annotated, Optional
+16 |
+17 | from ansible.plugins.action import ActionBase  # type: ignore
+   -
+   - from encommon.types import BaseModel
+   - from encommon.types import DictStrAny
+   - from encommon.types import sort_dict
+   -
+18 + from encommon.types import BaseModel, DictStrAny, sort_dict
+19 | from pydantic import Field
+   -
+20 |
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enrobie/params.py:70:9
+   |
+69 |     version: Annotated[
+70 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+71 |         Field(None,
+72 |               description='Which version instead of latest',
+   |
+help: Convert to `X | None`
+   |
+69 |     version: Annotated[
+   -         Optional[str],
+70 +         str | None,
+71 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enrobie/params.py:76:9
+   |
+75 |     repo_path: Annotated[
+76 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+77 |         Field(None,
+78 |               description='Clone configuration repository',
+   |
+help: Convert to `X | None`
+   |
+75 |     repo_path: Annotated[
+   -         Optional[str],
+76 +         str | None,
+77 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enrobie/params.py:82:9
+   |
+81 |     repo_version: Annotated[
+82 |         Optional[str],
+   |         ^^^^^^^^^^^^^
+83 |         Field(None,
+84 |               description='Clone configuration repository',
+   |
+help: Convert to `X | None`
+   |
+81 |     repo_version: Annotated[
+   -         Optional[str],
+82 +         str | None,
+83 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/enrobie/params.py:88:9
+   |
+87 |     config: Annotated[
+88 |         Optional[DictStrAny],
+   |         ^^^^^^^^^^^^^^^^^^^^
+89 |         Field(None,
+90 |               description='Clone configuration repository',
+   |
+help: Convert to `X | None`
+   |
+87 |     config: Annotated[
+   -         Optional[DictStrAny],
+88 +         DictStrAny | None,
+89 |         Field(None,
+   |
+
+UP045 [*] Use `X | None` for type annotations
+   --> collection/plugins/action/enrobie/params.py:109:9
+    |
+108 |     service: Annotated[
+109 |         Optional[str],
+    |         ^^^^^^^^^^^^^
+110 |         Field(None,
+111 |               description='Name of the service to install',
+    |
+help: Convert to `X | None`
+    |
+108 |     service: Annotated[
+    -         Optional[str],
+109 +         str | None,
+110 |         Field(None,
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> collection/plugins/action/enrobie/params.py:130:14
+    |
+128 |         # NOCVR
+129 |         self,
+130 |         tmp: Optional[str] = None,
+    |              ^^^^^^^^^^^^^
+131 |         task_vars: Optional[DictStrAny] = None,
+132 |     ) -> DictStrAny:
+    |
+help: Convert to `X | None`
+    |
+129 |         self,
+    -         tmp: Optional[str] = None,
+130 +         tmp: str | None = None,
+131 |         task_vars: Optional[DictStrAny] = None,
+    |
+
+UP045 [*] Use `X | None` for type annotations
+   --> collection/plugins/action/enrobie/params.py:131:20
+    |
+129 |         self,
+130 |         tmp: Optional[str] = None,
+131 |         task_vars: Optional[DictStrAny] = None,
+    |                    ^^^^^^^^^^^^^^^^^^^^
+132 |     ) -> DictStrAny:
+133 |         """
+    |
+help: Convert to `X | None`
+    |
+130 |         tmp: Optional[str] = None,
+    -         task_vars: Optional[DictStrAny] = None,
+131 +         task_vars: DictStrAny | None = None,
+132 |     ) -> DictStrAny:
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> collection/plugins/action/enrobie/params.py:169:16
+    |
+169 |         except Exception as reason:
+    |                ^^^^^^^^^
+170 |             result |= {
+171 |                 'failed': True,
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/tests/integration/__init__.py:10:1
+   |
+10 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | SAMPLES = (
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/tests/integration/test_default.py:10:1
+   |
+10 | / from os import environ
+11 | | from pathlib import Path
+12 | | from sys import executable
+13 | |
+14 | | from _pytest.capture import CaptureFixture
+15 | |
+16 | | from encommon.utils.stdout import strip_ansi
+17 | |
+18 | | from pytest_ansible.molecule import MoleculeScenario
+19 | |
+20 | | from . import SAMPLES
+   | |_____________________^
+   |
+help: Organize imports
+   |
+14 | from _pytest.capture import CaptureFixture
+   -
+15 | from encommon.utils.stdout import strip_ansi
+   -
+16 | from pytest_ansible.molecule import MoleculeScenario
+17 |
+18 | from . import SAMPLES
+   -
+19 |
+   |
+
+RUF059 Unpacked variable `stderr` is never used
+  --> collection/tests/integration/test_default.py:44:13
+   |
+44 |     stdout, stderr = (
+   |             ^^^^^^
+45 |         capfd.readouterr())
+   |
+help: Prefix it with an underscore or any other dummy variable pattern
+
