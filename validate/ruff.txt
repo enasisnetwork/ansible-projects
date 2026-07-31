@@ -14,7 +14,6 @@ I001 [*] Import block is un-sorted or un-formatted
 23 | |
 24 | | from pydantic import Field
    | |__________________________^
-   |
 help: Organize imports
    |
 14 |
@@ -178,7 +177,6 @@ I001 [*] Import block is un-sorted or un-formatted
 23 | |
 24 | | from pydantic import Field
    | |__________________________^
-   |
 help: Organize imports
    |
 14 |
@@ -333,7 +331,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -357,7 +354,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | |
 20 | | from . import SAMPLES
    | |_____________________^
-   |
 help: Organize imports
    |
 14 | from _pytest.capture import CaptureFixture
